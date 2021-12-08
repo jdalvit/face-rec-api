@@ -1,7 +1,6 @@
 const handleRegister = async (req, res, db, bcrypt) => {
   const {email, name, password} = req.body;
   if (!email || !name || !password) {
-    console.log(email, name, password)
     return res.status(400).json('incorrect form submission');
   }
   let hash = await bcrypt.hash(password, 10);

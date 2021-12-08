@@ -8,7 +8,6 @@ const handleApiCall = async (req, res) => {
   try {
     const data = await clarifai.models
       .predict('e15d0f873e66047e579f90cf82c9882z', req.body.input);
-      console.log(data);
     res.json(data);
   } catch (err) {
     console.log(err);

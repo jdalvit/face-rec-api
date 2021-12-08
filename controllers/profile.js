@@ -3,7 +3,6 @@ const handleProfile = (req, res, db) => {
   db.select('*').from('users')
     .where({
       id
-      //same as id: id
     })
     .then(user => {
       if (user.length) {
@@ -16,9 +15,6 @@ const handleProfile = (req, res, db) => {
       res.status(400).json('error getting user');
       console.log(err);
     });
-  // if (!found) {
-  //   res.status(404).json('not found');
-  // }
 }
 
 module.exports = {
